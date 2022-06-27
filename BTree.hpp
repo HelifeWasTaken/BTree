@@ -16,6 +16,14 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+static_assert(
+    (
+        (defined(_MSVC_LANG) && _MSVC_LANG >= 201703L) ||
+        __cplusplus >= 201703L
+    ),
+    "BtreeImplementation requires C++17 or higher (std::optional)"
+);
+
 #include <optional>
 
 #ifndef BTREE_NAMESPACE
